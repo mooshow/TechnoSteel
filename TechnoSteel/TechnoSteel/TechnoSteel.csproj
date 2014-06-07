@@ -38,7 +38,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Intake34\Ajax\AjaxControlToolkit.Binary.NET45\AjaxControlToolkitSampleSite\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -57,18 +67,373 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AdminPages\AddNewProduct.aspx" />
+    <Content Include="AdminPages\ManageProducts.aspx" />
+    <Content Include="assets\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="assets\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\css\flexslider.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets\ico\favicon.ico" />
+    <Content Include="assets\img\inProgress.gif" />
+    <Content Include="assets\img\line.png" />
+    <Content Include="assets\img\line1.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\pattern.jpg" />
+    <Content Include="assets\img\portfolio\work1.jpg" />
+    <Content Include="assets\img\portfolio\work10.jpg" />
+    <Content Include="assets\img\portfolio\work11.jpg" />
+    <Content Include="assets\img\portfolio\work12.jpg" />
+    <Content Include="assets\img\portfolio\work2.jpg" />
+    <Content Include="assets\img\portfolio\work3.jpg" />
+    <Content Include="assets\img\portfolio\work4.jpg" />
+    <Content Include="assets\img\portfolio\work5.jpg" />
+    <Content Include="assets\img\portfolio\work6.jpg" />
+    <Content Include="assets\img\portfolio\work7.jpg" />
+    <Content Include="assets\img\portfolio\work8.jpg" />
+    <Content Include="assets\img\portfolio\work9.jpg" />
+    <Content Include="assets\img\slider-nav.png" />
+    <Content Include="assets\img\slider\1.jpg" />
+    <Content Include="assets\img\slider\2.jpg" />
+    <Content Include="assets\img\slider\3.jpg" />
+    <Content Include="assets\img\slider\4.jpg" />
+    <Content Include="assets\img\slider\5.jpg" />
+    <Content Include="assets\img\slider\6.jpg" />
+    <Content Include="assets\img\social-icons\behance.png" />
+    <Content Include="assets\img\social-icons\dribbble.png" />
+    <Content Include="assets\img\social-icons\email.png" />
+    <Content Include="assets\img\social-icons\facebook.png" />
+    <Content Include="assets\img\social-icons\flickr.png" />
+    <Content Include="assets\img\social-icons\forrst.png" />
+    <Content Include="assets\img\social-icons\github.png" />
+    <Content Include="assets\img\social-icons\googleplus.png" />
+    <Content Include="assets\img\social-icons\linkedin.png" />
+    <Content Include="assets\img\social-icons\pinterest.png" />
+    <Content Include="assets\img\social-icons\rss.png" />
+    <Content Include="assets\img\social-icons\skype.png" />
+    <Content Include="assets\img\social-icons\tumblr.png" />
+    <Content Include="assets\img\social-icons\twitter.png" />
+    <Content Include="assets\img\social-icons\vimeo.png" />
+    <Content Include="assets\img\social-icons\youtube.png" />
+    <Content Include="assets\img\team\1.jpg" />
+    <Content Include="assets\img\team\2.jpg" />
+    <Content Include="assets\img\team\3.jpg" />
+    <Content Include="assets\img\team\4.jpg" />
+    <Content Include="assets\img\testimonials\1.jpg" />
+    <Content Include="assets\img\testimonials\2.jpg" />
+    <Content Include="assets\img\testimonials\3.jpg" />
+    <Content Include="assets\js\jflickrfeed.js" />
+    <Content Include="assets\js\jquery-1.8.2.min.js" />
+    <Content Include="assets\js\jquery.flexslider.js" />
+    <Content Include="assets\js\jquery.quicksand.js" />
+    <Content Include="assets\js\jquery.tweet.js" />
+    <Content Include="assets\js\jquery.ui.map.min.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\prettyPhoto\css\prettyPhoto.css" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\sprite.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="assets\prettyPhoto\js\jquery.prettyPhoto.js" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Controls\ctrl_AddProduct.ascx" />
+    <Content Include="Controls\ctrl_login.ascx" />
+    <Content Include="Controls\ctrl_ManageProducts.ascx" />
+    <Content Include="Controls\ctrl_ShowProduct.ascx" />
+    <Content Include="Controls\HomeProducts.ascx" />
+    <Content Include="Factory.aspx" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Login.aspx" />
+    <Content Include="Products.aspx" />
+    <Content Include="ShowProduct.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\AddNewProduct.aspx.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AddNewProduct.aspx.designer.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Applications.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Membership.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Paths.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationAllUsers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_PersonalizationPerUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Profile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_SchemaVersions.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspnet_WebEvent_Events.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrl_AddProduct.ascx.cs">
+      <DependentUpon>ctrl_AddProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrl_AddProduct.ascx.designer.cs">
+      <DependentUpon>ctrl_AddProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrl_login.ascx.cs">
+      <DependentUpon>ctrl_login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrl_login.ascx.designer.cs">
+      <DependentUpon>ctrl_login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrl_ManageProducts.ascx.cs">
+      <DependentUpon>ctrl_ManageProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrl_ManageProducts.ascx.designer.cs">
+      <DependentUpon>ctrl_ManageProducts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ctrl_ShowProduct.ascx.cs">
+      <DependentUpon>ctrl_ShowProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrl_ShowProduct.ascx.designer.cs">
+      <DependentUpon>ctrl_ShowProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HomeProducts.ascx.cs">
+      <DependentUpon>HomeProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HomeProducts.ascx.designer.cs">
+      <DependentUpon>HomeProducts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityClasses\Product.cs" />
+    <Compile Include="EntityClasses\ProductCategory.cs" />
+    <Compile Include="EntityClasses\ProductImage.cs" />
+    <Compile Include="Factory.aspx.cs">
+      <DependentUpon>Factory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factory.aspx.designer.cs">
+      <DependentUpon>Factory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClasses\DbInstance.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ProductCategoryManager.cs" />
+    <Compile Include="Managers\ProductImageManager.cs" />
+    <Compile Include="Managers\ProductManager.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowProduct.aspx.cs">
+      <DependentUpon>ShowProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowProduct.aspx.designer.cs">
+      <DependentUpon>ShowProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Site1.Master" />
+    <Content Include="assets\bootstrap\img\Thumbs.db" />
+    <Content Include="assets\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="assets\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="assets\ico\Thumbs.db" />
+    <Content Include="assets\img\portfolio\Thumbs.db" />
+    <Content Include="assets\img\slider\Thumbs.db" />
+    <Content Include="assets\img\social-icons\Thumbs.db" />
+    <Content Include="assets\img\team\Thumbs.db" />
+    <Content Include="assets\img\testimonials\Thumbs.db" />
+    <Content Include="assets\img\Thumbs.db" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_rounded\Thumbs.db" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\dark_square\Thumbs.db" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\default\Thumbs.db" />
+    <Content Include="assets\prettyPhoto\images\prettyPhoto\facebook\Thumbs.db" />
+    <Content Include="assets\sendmail.php" />
+    <Content Include="AdminPages\Web.config" />
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Handlers\ImageHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Theme1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
